@@ -25,6 +25,7 @@ const FileReducer = (state = initalState, action) => {
         payload: action.payload,
       };
     case ActionTypes.UPLOADING:
+      console.log('this just came in uploaded', action.payload.title);
       return {
         ...state,
         payload: action.payload,
