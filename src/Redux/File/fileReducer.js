@@ -7,7 +7,7 @@ const initalState = {
   incomplete: [],
 };
 
-const fileReducer = (state = initalState, action) => {
+const FileReducer = (state = initalState, action) => {
   switch (action.type) {
     case ActionTypes.COMPLETED:
       return {
@@ -36,4 +36,4 @@ const fileReducer = (state = initalState, action) => {
   }
 };
 
-export default fileReducer;
+export default FileReducer;
