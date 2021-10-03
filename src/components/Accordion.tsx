@@ -12,6 +12,7 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 import Colors from '../styles/colors';
+import Fonts from '../styles/fonts';
 
 interface Props {
   name: string;
@@ -64,13 +65,14 @@ const styles = StyleSheet.create({
   },
   title: {
     color: Colors.black,
-    // fontFamily: 'Poppins-Bold',
+    fontFamily: Fonts.poppinsLight,
   },
   cancelText: {
     color: Colors.blue,
     textDecorationColor: Colors.blue,
     textDecorationStyle: 'solid',
     textDecorationLine: 'underline',
+    fontFamily: Fonts.poppinsLight,
   },
   header: {
     flexDirection: 'row',
