@@ -17,7 +17,6 @@ const Uploading = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.cardBackground,
-    padding: hp(2),
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

@@ -31,8 +31,8 @@ const FileUpload = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: hp(3),
-    paddingVertical: hp(3),
+    paddingHorizontal: hp(1.5),
+    paddingVertical: hp(1),
   },
 });
 

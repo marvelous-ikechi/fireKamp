@@ -57,11 +57,11 @@ const Accordion = ({name, cancelAll, cancelUpload, content}: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.cardBackground,
     padding: hp(2),
     flexDirection: 'column',
     justifyContent: 'space-between',
-    marginBottom: hp(3),
+    marginBottom: hp(1),
+    borderRadius: 16,
   },
   title: {
     color: Colors.black,
@@ -77,6 +77,9 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  content: {
+    marginTop: hp(2),
   },
 });
 export default Accordion;

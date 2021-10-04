@@ -1,40 +1,30 @@
-import * as ActionTypes from './type';
+// this is the user reducers
+import * as actionType from './type';
 
-const initalState = {
-  completed: [],
-  nextUp: [],
-  uploading: [],
-  incomplete: [],
+export const initialUserState = {
+  user: [],
 };
 
-const FileReducer = (state = initalState, action) => {
+export default function FileReducer(state = initialUserState, action) {
   switch (action.type) {
-    case ActionTypes.COMPLETED:
+    case actionType.UPLOADING:
       return {
         ...state,
-        payload: action.payload,
+        user: action.payload,
       };
-    case ActionTypes.NEXT_UP:
+    case actionType.GET_USERS_FAILURE:
       return {
         ...state,
-        payload: action.payload,
+        user: [],
       };
-    case ActionTypes.INCOMPLETE:
+    case actionType.GET_USERS_LOGOUT:
+      console.log('logout');
       return {
         ...state,
-        payload: action.payload,
+        user: [],
       };
-    case ActionTypes.UPLOADING:
-      console.log('this just came in uploaded', action.payload.title);
-      return {
-        ...state,
-        payload: action.payload,
-      };
-    default:
-      return {
-        ...state,
-      };
-  }
-};
 
-export default FileReducer;
+    default:
+      return state;
+  }
+}
