@@ -15,7 +15,7 @@ How to  Install and run on ios
 `react-native run-ios`
 
 Dependencies Used
-
+-----
 REACT NAVIGATION DEPENDENCIES
 -----------
 `"@react-navigation/native": "^6.0.4"`
@@ -60,5 +60,8 @@ For Material icons
 ---
 `"react-native-vector-icons": "^8.1.0"`
 
+For progress icon
+------
+`"react-native-progress": "^5.0.0",`
 
 
