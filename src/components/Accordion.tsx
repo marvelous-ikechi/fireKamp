@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import * as React from 'react';
+import {useState} from 'react';
 import {
   View,
   Text,
@@ -7,10 +8,7 @@ import {
   SafeAreaView,
   StyleSheet,
 } from 'react-native';
-import {
-  heightPercentageToDP as hp,
-  widthPercentageToDP as wp,
-} from 'react-native-responsive-screen';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Colors from '../styles/colors';
 import Fonts from '../styles/fonts';
 
@@ -19,9 +17,18 @@ interface Props {
   cancelUpload?: boolean;
   cancelAll?: boolean;
   content: React.ReactNode;
+  cancelUploadFunc?: () => void;
+  cancelAllFunc?: () => void;
 }
 
-const Accordion = ({name, cancelAll, cancelUpload, content}: Props) => {
+const Accordion = ({
+  name,
+  cancelAll,
+  cancelUpload,
+  content,
+  cancelAllFunc,
+  cancelUploadFunc,
+}: Props) => {
   const [openState, setOpenState] = useState<boolean>(false);
 
   const chevronOpen = require('../assets/chevronUp.png');
@@ -32,13 +39,13 @@ const Accordion = ({name, cancelAll, cancelUpload, content}: Props) => {
         <View style={styles.header}>
           <Text style={styles.title}>{name}</Text>
           {cancelUpload && (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => cancelUploadFunc}>
               <Text style={styles.cancelText}>CANCEL UPLOAD</Text>
             </TouchableOpacity>
           )}
 
           {cancelAll && (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => cancelAllFunc}>
               <Text style={styles.cancelText}>CANCEL ALL</Text>
             </TouchableOpacity>
           )}
